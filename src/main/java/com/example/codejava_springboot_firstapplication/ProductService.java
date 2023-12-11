@@ -13,4 +13,19 @@ public class ProductService {
     List<Product> getAllProduct(){
         return repository.findAll();
     }
+
+    public void saveProduct(Product product){
+        repository.save(product);
+    }
+
+
+
+    public Product findProductById(Long id){
+        return repository.findById(id).get();
+    }
+
+    public void deleteProduct(Long id){
+        repository.deleteById(id);
+    }
+
 }

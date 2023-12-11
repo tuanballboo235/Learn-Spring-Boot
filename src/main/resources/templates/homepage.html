@@ -7,14 +7,34 @@
     <title>Title</title>
 </head>
 <body>
-  <table>
-      <tr th:each="contact:${contacts}">
+<div align="center">
+    <h1>Product Manager</h1>
+    <a href="/add-product">Create New Product</a>
+    <table border="1px">
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Made in</th>
+            <th>Price</th>
+            <th >Action</th>
+        </tr>
+        <tr th:each="product:${products}">
 
-          <td th:text="${contact.name}"></td>
-          <td th:text="${contact.email}"></td>
-          <td th:text="${contact.country}"></td>
-      </tr>
-  </table>
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.brand}"></td>
+            <td th:text="${product.madein}"></td>
+            <td th:text="${product.price}"></td>
+            <td>
+                <a th:href="@{'/edit/'+${product.id}}" th:text="Edit"></a>
+                <a th:href="@{'/delete/'+${product.id}}" th:text="Delete"></a>
+
+            </td>
+        </tr>
+    </table>
+</div>
+
 
 </body>
 </html>
