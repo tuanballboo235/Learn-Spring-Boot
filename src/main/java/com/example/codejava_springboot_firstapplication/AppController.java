@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AppController {
     @RequestMapping("/homepage")
     public String homepapge(Model model){
-        ContactBussiness contactBussiness = new ContactBussiness();
-        model.addAttribute("contacts",contactBussiness.getContactList());
+
 
         return "homepage";
     }
